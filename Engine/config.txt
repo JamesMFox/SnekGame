@@ -1,0 +1,14 @@
+[Tile Size]
+20
+
+[Board Size]
+32 24
+
+[Speedup Rate]
+0.93f
+
+[Poison Amount]
+10
+
+[Goal Amount]
+20

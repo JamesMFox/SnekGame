@@ -26,15 +26,17 @@ Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
 	gfx( wnd ),
-	brd( gfx ),
+	cfg("config.txt"),
+	brd( gfx, cfg ),
 	rng( std::random_device()() ),
-	snek( {2,2} )
+	snek( {2,2} ),
+	snekSpeedupFactor(cfg.GetSpeedupRate())
 {
-	for( int i = 0; i < nPoison; i++ )
+	for( int i = 0; i < cfg.GetPoisonAmount(); i++ )
 	{
 		brd.SpawnContents( rng,snek,Board::CellContents::Poison );
 	}
-	for( int i = 0; i < nFood; i++ )
+	for( int i = 0; i < cfg.GetGoalAmount(); i++ )
 	{
 		brd.SpawnContents( rng,snek,Board::CellContents::Food );
 	}

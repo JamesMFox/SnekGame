@@ -28,6 +28,7 @@
 #include <random>
 #include "SoundEffect.h"
 #include "FrameTimer.h"
+#include "Config.h"
 
 class Game
 {
@@ -47,6 +48,7 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	Config cfg;
 	Board brd;
 	Snake snek;
 	Location delta_loc = {1,0};
@@ -63,7 +65,7 @@ private:
 	static constexpr int nFood = 12;
 	float snekMovePeriod = 0.4f;
 	float snekMoveCounter = 0.0f;
-	static constexpr float snekSpeedupFactor = 0.93f;
+	float snekSpeedupFactor = 0.93f;
 	bool gameIsOver = false;
 	bool gameIsStarted = false;
 	/********************************/
