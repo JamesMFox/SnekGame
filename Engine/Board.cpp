@@ -13,7 +13,7 @@ Board::Board(Graphics& gfx, Config& cfg)
 }
 Board::~Board()
 {
-	delete contents;
+	delete [] contents;
 	contents = nullptr;
 }
 
